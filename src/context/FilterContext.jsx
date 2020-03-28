@@ -6,7 +6,7 @@ const FilterDispatchContext = React.createContext();
 function filterReducer(state, action) {
   switch (action.type) {
     case "FILTER_CHANGE":
-      state = { phrase: action.phrase };
+      state = { category: action.category };
       break;
   }
   return state;
@@ -14,7 +14,7 @@ function filterReducer(state, action) {
 
 function FilterProvider({ children }) {
   const [state, dispatch] = React.useReducer(filterReducer, {
-    phrase: "fashion"
+    category: "fashion"
   });
   return (
     <FilterStateContext.Provider value={state}>

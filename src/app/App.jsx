@@ -9,10 +9,10 @@ function App() {
   return (
     <Container fluid>
       <Row>
-        <Col md={2}>
+        <Col lg={2} md={3} sm={3}>
           <Filter />
         </Col>
-        <Col md={8}>
+        <Col lg={9} md={10}>
           <Listing />
         </Col>
       </Row>

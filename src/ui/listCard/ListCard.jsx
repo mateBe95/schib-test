@@ -10,9 +10,11 @@ export default function ListCard({ image, title, preamble, date }) {
         <Card.Img variant="left" src={image} />
         <Card.Body>
           <Card.Title className="card-title">
-            <h3>{title}</h3>
+            <h3>{title}
+            {" "}
+            <Badge variant="secondary">New</Badge> 
+            </h3>
             <h6>
-              <Badge variant="secondary">New</Badge> 
               {date}
             </h6>
           </Card.Title>

@@ -4,7 +4,6 @@ import App from './app/App';
 import { FilterProvider } from './context/FilterContext';
 
 
-
 ReactDOM.render(
     <FilterProvider>
            <App/>

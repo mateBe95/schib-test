@@ -1,14 +1,15 @@
-import React, { useRef, useCallback } from "react";
+import React, { useCallback } from "react";
 import Form from "react-bootstrap/Form";
 import "./filter.css";
 import { useFilterDispatch } from "../../context/FilterContext";
+
 export default function Filter() {
   const dispatch = useFilterDispatch();
   const handleChange = useCallback(event => {
     dispatch(
       {
         type: "FILTER_CHANGE",
-        phrase: event.currentTarget.name
+        category: event.currentTarget.name
       },
       [dispatch]
     );
@@ -22,9 +23,9 @@ export default function Filter() {
           type="checkbox"
           custom
           defaultChecked
-          onChange={handleChange}
           label="Fashion"
           name="fashion"
+          onChange={handleChange}
           id="fashion-checkbox"
         />
 
