@@ -1,0 +1,9 @@
+.card-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
