@@ -13,8 +13,8 @@ const MONTHS = [
   "desember"
 ];
 
-const formatDate = ( date ) => {
-  const DATE =  date.date || date 
+const formatDate = ( news ) => {
+  const DATE =  news.date || news 
   const [day, monthName, year] = DATE.replace('.', '').split(" ");
   const month = MONTHS.indexOf(monthName);
   return new Date(year, month, day);
