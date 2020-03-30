@@ -5,20 +5,20 @@ import "./ListCard.css";
 
 export default function ListCard({ image, title, preamble, date }) {
   return (
-    <Card className="mt-4">
+    <Card className="mt-4" data-testid="card">
       <div className="card-wrapper">
-        <Card.Img variant="left" src={image} />
+        <Card.Img data-testid="image" variant="left" src={image} />
         <Card.Body>
           <Card.Title className="card-title">
-            <h3>{title}
+            <h3 data-testid="card-title">{title}
             {" "}
             <Badge variant="secondary">New</Badge> 
             </h3>
-            <h6>
+            <h6 data-testid="date">
               {date}
             </h6>
           </Card.Title>
-          <Card.Text>{preamble}</Card.Text>
+          <Card.Text data-testid="preamble">{preamble}</Card.Text>
         </Card.Body>
       </div>
     </Card>
