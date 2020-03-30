@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ListCard from "../../ui/listCard/ListCard";
 import { useFetch } from "../../hooks/useFetch";
 import { useFilterState } from "../../context/FilterContext";
@@ -15,17 +15,20 @@ export default function Listing() {
     `http://localhost:6010/articles/${category}`
   );
 
-  function handleSortType(type) {
-    setSortType(type);
-    let sortedData = data.articles.sort(SORT_UTIL[sortType].sortBy);
-    setSortedData(sortedData);
-  }
+  const handleSortType = useCallback(
+    function(type) {
+      setSortType(type);
+      let sortedData = data.articles.sort(SORT_UTIL[sortType].sortBy);
+      setSortedData(sortedData);
+    },
+    [data, sortType, setSortedData]
+  );
 
   useEffect(() => {
     if (!loading && !error) {
       handleSortType("default");
     }
-  }, [loading, error, data]);
+  }, [loading, error, handleSortType]);
 
   if (loading) return <div>Loading...</div>;
 
